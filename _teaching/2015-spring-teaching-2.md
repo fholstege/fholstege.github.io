@@ -1,20 +1,10 @@
 ---
-title: "Teaching experience 2"
+title: "Supervising Bachelor Theses "
 collection: teaching
-type: "Workshop"
-permalink: /teaching/2015-spring-teaching-1
-venue: "University 1, Department"
-date: 2015-01-01
-location: "City, Country"
+type: "Supervised several students over the course of two months."
+permalink: /teaching/2014-spring-teaching-1
+venue: "University of Amsterdam, Bachelor of Econometrics and Data Science"
+date: 2024-01-01
 ---
 
-This is a description of a teaching experience. You can use markdown like any other post.
 
-Heading 1
-======
-
-Heading 2
-======
-
-Heading 3
-======
