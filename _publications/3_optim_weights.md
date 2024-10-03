@@ -1,6 +1,16 @@
 ---
-title: "The Bias-Variance Trade-off of Importance Weighting"
+title: "Optimizing importance weighting in the presence of sub-population shifts"
 collection: publications
 permalink: /publication/optim_weights
-excerpt: '**Working paper coming soon**: In machine learning, we often have training data from different subgroups. However, the extent to which these groups occur in our training data often does not reflect our test distribution of interest.  A common practice for dealing with this problem is _importance weighting_, which gives greater weight to datapoints from certain groups (and lower to others). With importance weighting, the estimated ML model can become sensitive to a small number of datapoints that are given (too) much weight. We investigate how importance weighting affects the bias-variance trade-off. We find that existing heuristics for determining the weights aim to minimize the bias, but drastically increase the variance of the estimated model (e.g. overfitting), leading to suboptimal performance. We cast finding the optimal weights as a bi-level optimization problem, and show that solving this problem can lead to weights that perform better than commonly used heuristics.'
+excerpt: '**Working paper coming soon**: A distribution shift between the training and test data can severely harm perfor-
+mance of machine learning models. Importance weighting addresses this issue by
+assigning different weights to data points during training. We argue that existing
+heuristics for determining the weights are suboptimal, as they neglect the increase
+of the variance of the estimated model due to the finite sample size of the training
+data. We interpret the optimal weights in terms of a bias-variance trade-off, and
+propose a bi-level optimization procedure in which the weights and model param-
+eters are optimized simultaneously. We apply this optimization to existing impor-
+tance weighting techniques for last-layer retraining of deep neural networks in the
+presence of sub-population shifts and show empirically that optimizing weights
+significantly improves generalization performance.'
 ---
