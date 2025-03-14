@@ -32,8 +32,11 @@
             </div>
             
             {% if post.brief_description_image %}
-              <div class="brief-description-image">
-                <img src="{{ site.baseurl }}/images/{{ post.brief_description_image }}" alt="Description image for {{ post.title }}">
+              <div class="brief-description-image" style="text-align: center;">
+                <img src="{{ site.baseurl }}/images/{{ post.brief_description_image }}" 
+                     alt="Description image for {{ post.title }}"
+                     {% if post.brief_description_image_scale %}style="width: {{ post.brief_description_image_scale }}%;"
+                     {% endif %}>
               </div>
             {% endif %}
           </div>

@@ -10,5 +10,7 @@ brief_description: 'We introduce a method for separating the latent space of neu
 
 citation: 'Holstege, F., Wouters, B., Giersbergen, N., & Diks, C. (2024). Removing Spurious Concepts from Neural Network Representations via Joint Subspace Estimation. In Proceedings of the 41st International Conference on Machine Learning (pp. 18568–18610). PMLR.'
 brief_description_image: "illustrate_method_v9.png"
+brief_description_image_scale: 70 # This will make the image 70% of its container width
+
 
 ---
