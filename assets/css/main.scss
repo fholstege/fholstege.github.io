@@ -39,3 +39,71 @@
 @import "vendor/font-awesome/brands";
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
+
+/* Single page layout specific styles */
+.section {
+  min-height: 50vh;
+  padding: 2em 0;
+  border-bottom: 1px solid #f2f3f3;
+  scroll-margin-top: 80px;
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.section-title {
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  border-bottom: 4px solid $primary-color;
+  font-size: $type-size-2;
+}
+
+.section-navigation {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #fff;
+  padding: 1em 0;
+  margin-bottom: 2em;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.section-navigation ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.section-navigation li {
+  margin: 0.5em 1em;
+}
+
+.section-navigation a {
+  text-decoration: none;
+  font-weight: bold;
+  color: $text-color;
+  padding: 0.5em 0;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.section-navigation a:hover,
+.section-navigation a.active {
+  color: $primary-color;
+  border-bottom: 2px solid $primary-color;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
