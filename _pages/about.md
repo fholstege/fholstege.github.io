@@ -8,13 +8,6 @@ redirect_from:
   - /about.html
 ---
 
-<div id="section-nav" class="section-navigation">
-  <ul>
-    <li><a href="#about-section">About</a></li>
-    <li><a href="#research-section">Research</a></li>
-    <li><a href="#teaching-section">Teaching</a></li>
-  </ul>
-</div>
 
 It is my ambition to make a contribution towards the responsible and fair use of machine learning algorithms in society at large. Currently, I am pursuing this ambition as a PhD candidate, where I develop methods for making deep learning models more interpretable and robust. Within this, I focus on the issue of spurious correlations. 
 
