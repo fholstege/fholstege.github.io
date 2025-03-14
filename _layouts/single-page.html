@@ -18,10 +18,10 @@ layout: default
     {% if page.modified %}<meta itemprop="dateModified" content="{{ page.modified | date: "%B %d, %Y" }}">{% endif %}
 
 
-      <section class="page__content" itemprop="text">
+    <section class="page__content" itemprop="text">
         <div id="about-section" class="section">
           <h2 class="section-title">About Me</h2>
-          {{ include content }}
+          {% include about.html %}
         </div>
         
         <div id="research-section" class="section">
