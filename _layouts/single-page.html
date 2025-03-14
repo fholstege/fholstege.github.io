@@ -17,26 +17,79 @@ layout: default
     {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date: "%B %d, %Y" }}">{% endif %}
     {% if page.modified %}<meta itemprop="dateModified" content="{{ page.modified | date: "%B %d, %Y" }}">{% endif %}
 
+    <style>
+      /* More balanced spacing */
+      #main {
+        margin-top: 0.7em !important;
+        padding-top: 0 !important;
+      }
+      .page {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+      }
+      article.page {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+      }
+      .page__content {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+      }
+      .section {
+        margin-top: 0 !important;
+        margin-bottom: 1.2em !important;
+        padding-top: 0 !important;
+      }
+      .section-title {
+        margin-top: 0.8em !important;
+        margin-bottom: 0.4em !important;
+        padding: 0 !important;
+      }
+      h3 {
+        margin-top: 0.5em !important;
+        padding-top: 0.3em !important;
+      }
+      /* Special handling for first section */
+      #about-section {
+        margin-top: 0.5em !important;
+        padding-top: 0.3em !important;
+      }
+      #about-section h3 {
+        margin-top: 0.3em !important;
+        padding-top: 0.3em !important;
+      }
+      .about-content p {
+        margin-top: 0.5em !important;
+        margin-bottom: 0.5em !important;
+      }
+      /* Smaller spacing between navigation and content */
+      .masthead {
+        margin-bottom: 0.5em !important;
+      }
+      .masthead__inner-wrap {
+        padding-bottom: 0.3em !important;
+      }
+    </style>
 
     <section class="page__content" itemprop="text">
+       
         <div id="about-section" class="section">
-          <h2 class="section-title">About Me</h2>
+          <h3 class="section-title">About Me</h3>
           {% include about.html %}
         </div>
         
         <div id="research-section" class="section">
-          <h2 class="section-title">Research</h2>
+          <h3 class="section-title">Research</h3>
           {% include publications.html %}
         </div>
 
-
         <div id="policy-section" class="section">
-            <h2 class="section-title">Policy</h2>
+            <h3 class="section-title">Policy</h3>
             {% include portfolio.html %}
-          </div>
+        </div>
         
         <div id="teaching-section" class="section">
-          <h2 class="section-title">Teaching</h2>
+          <h3 class="section-title">Teaching</h3>
           {% include teaching.html %}
         </div>
       </section>

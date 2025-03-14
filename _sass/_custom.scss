@@ -1,0 +1,61 @@
+/* Custom styles for publications */
+
+.publication-item {
+  margin-bottom: 1.5em;
+}
+
+.publication-grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 20px;
+  align-items: start;
+  
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.publication-image {
+  img {
+    max-width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+}
+
+.publication-details {
+  h3 {
+    margin-top: 0 !important;
+  }
+}
+
+.publication-brief-description {
+  margin-bottom: 1em;
+  font-size: 0.9em;
+}
+
+.publication-authors {
+  margin-bottom: 0.3em;
+  font-style: italic;
+}
+
+.publication-venue {
+  font-size: 0.9em;
+  margin-bottom: 0.5em;
+}
+
+.publication-links {
+  margin-top: 0.8em;
+  
+  .btn {
+    margin-right: 0.3em;
+    margin-bottom: 0.3em;
+    padding: 0.3em 0.6em;
+    font-size: 0.8em;
+  }
+}
+
+/* Style for publications without images */
+.publication-grid:not(:has(.publication-image)) {
+  grid-template-columns: 1fr;
+}
