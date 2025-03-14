@@ -97,6 +97,11 @@
   border-bottom: 2px solid $primary-color;
 }
 
+/* Main navigation active state */
+.greedy-nav a.active {
+  color: $primary-color;
+}
+
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;

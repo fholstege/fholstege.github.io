@@ -1,9 +1,10 @@
 $(document).ready(function() {
-  // Add smooth scrolling to section links
-  $('.section-navigation a').on('click', function(e) {
+  // Add smooth scrolling to section links (both in-page and from main navigation)
+  $('.section-navigation a, a[href^="/#"]').on('click', function(e) {
     e.preventDefault();
     
-    var target = $(this.getAttribute('href'));
+    var targetId = this.getAttribute('href').replace('/', '');
+    var target = $(targetId);
     
     if (target.length) {
       $('html, body').animate({
@@ -24,6 +25,11 @@ $(document).ready(function() {
           refElement.position().top + refElement.height() > scrollPos) {
         $('.section-navigation a').removeClass('active');
         currLink.addClass('active');
+        
+        // Also update the main navigation active status
+        var mainNavLink = $('nav.greedy-nav a[href="/#' + $(this).attr('id') + '"]');
+        $('nav.greedy-nav a').removeClass('active');
+        mainNavLink.addClass('active');
       } else {
         currLink.removeClass('active');
       }

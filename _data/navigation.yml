@@ -1,14 +1,10 @@
 # main links links
 main:
   - title: "About"
-    url: /
+    url: "/#about-section"
 
   - title: "Research"
-    url: /publications/    
+    url: "/#research-section"
 
-  - title: "Policy"
-    url: /portfolio/    
-    
   - title: "Teaching"
-    url: /teaching/
-  
+    url: "/#teaching-section"
