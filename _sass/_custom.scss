@@ -59,3 +59,88 @@
 .publication-grid:not(:has(.publication-image)) {
   grid-template-columns: 1fr;
 }
+
+/* Ensure proper font sizing across the site */
+html {
+  font-size: 14px; 
+}
+
+
+body {
+  /*font-size: 1rem;  Uses the 14px base */
+  line-height: 1.6; /* Improved readability */
+}
+
+/* Ensure proper paragraph spacing with smaller fonts */
+.page__content {
+  p, li, dl {
+    font-size: 0.875rem; 
+  }
+}
+
+.about-content .top {
+  margin-top: 3em !important;
+  padding-top: 3em !important;
+}
+
+
+.about-content .indented {
+  padding-left: 2em;
+}
+
+/* Font size for about-content paragraphs */
+.about-content p {
+  font-size: 0.5rem; /* Adjust this value as needed */
+}
+
+/* Add more space between section titles and content */
+.section-title {
+  margin-bottom: 2em !important; /* Increased from default 1em to 2em */
+}
+
+
+/* Enhanced link hover effects */
+a,
+a[href] {
+  color: #495057; /* Dark gray for links */
+  text-decoration: none; /* Remove default underline */
+  transition: text-decoration 0.2s ease-in-out;
+  
+  &:hover {
+    text-decoration: underline; /* Add underline on hover */
+  }
+  
+  &:visited {
+    color: #6c757d; /* Medium gray for visited */
+  }
+  
+  &:visited:hover {
+    text-decoration: underline; /* Underline on hover even for visited links */
+  }
+}
+
+/* Specific hover effects for publication and content links */
+.page__content a,
+.page__content a[href],
+.publication-links a,
+.publication-links a[href],
+.author__urls a,
+.author__urls a[href],
+.sidebar a,
+.sidebar a[href],
+.about-content a,
+.about-content a[href] {
+  &:hover {
+    text-decoration: underline; /* Ensure underline for all content links */
+  }
+}
+
+/* Special styling for publication titles */
+.publication-details h3 a,
+.publication-details h3 a[href] {
+  text-decoration: none;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
