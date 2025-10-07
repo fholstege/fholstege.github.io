@@ -26,9 +26,16 @@
 .publication-details {
   h3 {
     margin-top: 0 !important;
-    font-size: 2em !important; /* Make publication titles bigger */
+    font-size: 1.4em !important; /* Make publication titles bigger but not huge */
     font-weight: 600 !important; /* Make them slightly bolder */
   }
+}
+
+/* Style publication titles in the archive list */
+.archive__item-title {
+  font-size: 1.4em !important; /* Make publication titles bigger but not huge */
+  font-weight: 600 !important; /* Make them slightly bolder */
+  margin-bottom: 0.5em !important;
 }
 
 .publication-brief-description {
@@ -64,19 +71,18 @@
 
 /* Ensure proper font sizing across the site */
 html {
-  font-size: 14px; 
+  font-size: 16px; /* Increase base font size for better readability */
 }
 
-
 body {
-  /*font-size: 1rem;  Uses the 14px base */
+  font-size: 1rem; /* Use the 16px base */
   line-height: 1.6; /* Improved readability */
 }
 
-/* Ensure proper paragraph spacing with smaller fonts */
+/* Ensure proper paragraph spacing with normal fonts */
 .page__content {
   p, li, dl {
-    font-size: 0.875rem; 
+    font-size: 1rem; /* Normal readable size */
   }
 }
 
@@ -92,7 +98,7 @@ body {
 
 /* Font size for about-content paragraphs */
 .about-content p {
-  font-size: 0.5rem; /* Adjust this value as needed */
+  font-size: 1rem; /* Normal readable size */
 }
 
 /* About page paragraph spacing */
@@ -110,19 +116,20 @@ body {
 }
 
 
-/* Enhanced link hover effects */
+/* Enhanced link styling with underlines */
 a,
 a[href] {
-  color: #495057; /* Dark gray for links */
-  text-decoration: none; /* Remove default underline */
+  color: #000000; /* Black color for links */
+  text-decoration: underline; /* Underline all links by default */
   transition: text-decoration 0.2s ease-in-out;
   
   &:hover {
-    text-decoration: underline; /* Add underline on hover */
+    text-decoration: underline; /* Keep underline on hover */
   }
   
   &:visited {
-    color: #6c757d; /* Medium gray for visited */
+    color: #333333; /* Dark gray for visited links */
+    text-decoration: underline; /* Keep underline for visited links */
   }
   
   &:visited:hover {
@@ -130,7 +137,7 @@ a[href] {
   }
 }
 
-/* Specific hover effects for publication and content links */
+/* Ensure all content links are underlined */
 .page__content a,
 .page__content a[href],
 .publication-links a,
@@ -141,24 +148,28 @@ a[href] {
 .sidebar a[href],
 .about-content a,
 .about-content a[href] {
+  text-decoration: underline; /* Ensure underline for all content links */
+  
   &:hover {
-    text-decoration: underline; /* Ensure underline for all content links */
+    text-decoration: underline; /* Keep underline on hover */
   }
 }
 
 /* Special styling for publication titles */
 .publication-details h3 a,
-.publication-details h3 a[href] {
-  text-decoration: none;
+.publication-details h3 a[href],
+.archive__item-title a,
+.archive__item-title a[href] {
+  text-decoration: underline; /* Underline publication titles too */
   
   &:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Keep underline on hover */
   }
 }
 
 /* Style for individual publication page titles */
 .page__title {
-  font-size: 2.5em !important; /* Make individual publication page titles even bigger */
+  font-size: 2em !important; /* Make individual publication page titles bigger but reasonable */
   font-weight: 700 !important;
   line-height: 1.2 !important;
 }
