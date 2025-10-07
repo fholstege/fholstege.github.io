@@ -26,6 +26,8 @@
 .publication-details {
   h3 {
     margin-top: 0 !important;
+    font-size: 2em !important; /* Make publication titles bigger */
+    font-weight: 600 !important; /* Make them slightly bolder */
   }
 }
 
@@ -152,4 +154,11 @@ a[href] {
   &:hover {
     text-decoration: underline;
   }
+}
+
+/* Style for individual publication page titles */
+.page__title {
+  font-size: 2.5em !important; /* Make individual publication page titles even bigger */
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
 }
