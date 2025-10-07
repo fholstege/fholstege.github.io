@@ -93,6 +93,15 @@ body {
   font-size: 0.5rem; /* Adjust this value as needed */
 }
 
+/* About page paragraph spacing */
+.about-content p {
+  margin-bottom: 1.5em !important;
+}
+
+.about-content p.top {
+  margin-bottom: 2em !important;
+}
+
 /* Add more space between section titles and content */
 .section-title {
   margin-bottom: 2em !important; /* Increased from default 1em to 2em */
