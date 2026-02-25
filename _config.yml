@@ -141,7 +141,12 @@ include:
   - .htaccess
   - _pages
   - files
+  - about.md
+  - policy.md
+  - teaching.md
 exclude:
+  - .DS_Store
+  - AGENTS.MD
   - "*.sublime-project"
   - "*.sublime-workspace"
   - .asset-cache

@@ -1,0 +1,1 @@
+I am currently teaching (or have taught) courses in Statistical Learning (2nd year course) and Reinforcement Learning (third year course) for the Bachelor in Econometrics and Data Science. I also have supervised bachelor and master students in these subjects.

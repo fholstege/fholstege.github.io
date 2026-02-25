@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Floris Holstege</title>
+    <meta
+      name="description"
+      content="Floris Holstege - PhD candidate in Machine Learning at the University of Amsterdam."
+    />
+    <link rel="icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <aside class="sidebar" aria-label="Profile and contact details">
+        <img
+          class="profile-photo"
+          src="images/CV.jpg"
+          alt="Portrait of Floris Holstege"
+        />
+        <h1 class="name">Floris Holstege</h1>
+        <p class="role">PhD Candidate in Machine Learning</p>
+        <p class="org">University of Amsterdam</p>
+        <ul class="contact-list">
+          <li>
+            <a href="mailto:f.g.holstege@uva.nl">
+              <img src="images/mail_logo.png" alt="" aria-hidden="true" class="contact-icon" />
+              <span>Email</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/fholstege?originalSubdomain=nl"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img
+                src="images/linkedin_logo.png"
+                alt=""
+                aria-hidden="true"
+                class="contact-icon"
+              />
+              <span>LinkedIn</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/fholstege"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img src="images/git_logo.png" alt="" aria-hidden="true" class="contact-icon" />
+              <span>GitHub</span></a
+            >
+          </li>
+        </ul>
+      </aside>
+
+      <div class="content-shell">
+        <header class="topbar">
+          <nav aria-label="Primary">
+            <ul class="top-nav">
+              <li><a href="#about">About</a></li>
+              <li><a href="#research">Research</a></li>
+              <li><a href="#policy">Policy</a></li>
+              <li><a href="#teaching">Teaching</a></li>
+            </ul>
+          </nav>
+        </header>
+
+        <main class="content">
+          <section id="about" class="content-section">
+            <h2>About</h2>
+            <div id="about-content" aria-live="polite">
+              <p>Loading profile...</p>
+            </div>
+          </section>
+
+          <section id="research" class="content-section">
+            <h2>Research</h2>
+            <div id="research-grid" class="research-grid"></div>
+          </section>
+
+          <section id="policy" class="content-section">
+            <h2>Policy</h2>
+            <div id="policy-content" aria-live="polite">
+              <p>Loading policy content...</p>
+            </div>
+          </section>
+
+          <section id="teaching" class="content-section">
+            <h2>Teaching</h2>
+            <div id="teaching-content" aria-live="polite">
+              <p>Loading teaching content...</p>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      const researchPapers = [
+        {
+          title: "Preserving Task-Relevant Information Under Linear Concept Removal",
+          venue: "NeurIPS",
+          year: "2025",
+          description:
+            "We introduce SPLICE, an oblique projection method that removes concept information while preserving task-relevant linear signal.",
+          image: "images/SPLICE_illustrated.png",
+          paperUrl: "https://arxiv.org/abs/2506.10703",
+        },
+        {
+          title: "Optimizing Importance Weighting in the Presence of Sub-population Shifts",
+          venue: "International Conference on Learning Representations (ICLR)",
+          year: "2025",
+          description:
+            "We show that commonly used importance weights are often sub-optimal and propose a joint optimization approach that improves generalization.",
+          image: "images/WB_plot_v2.png",
+          paperUrl: "https://arxiv.org/abs/2410.14315",
+        },
+        {
+          title:
+            "Removing Spurious Concepts from Neural Network Representations via Joint Subspace Estimation",
+          venue: "International Conference on Machine Learning (ICML)",
+          year: "2024",
+          description:
+            "We present an iterative method that separates spurious and task-relevant subspaces to improve out-of-distribution performance.",
+          image: "images/JSE.png",
+          paperUrl: "https://arxiv.org/abs/2310.11991",
+        },
+      ];
+
+      function markdownToParagraphs(markdownText) {
+        return markdownText
+          .split(/\n\s*\n/g)
+          .map((block) => block.trim())
+          .filter(Boolean)
+          .map((block) =>
+            block
+              .replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2">$1</a>')
+              .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+              .replace(/\*(.+?)\*/g, "<em>$1</em>")
+          );
+      }
+
+      async function renderMarkdownSection(filePath, containerId, fallbackMessage) {
+        const container = document.getElementById(containerId);
+        try {
+          const response = await fetch(filePath);
+          if (!response.ok) {
+            throw new Error(`Could not load ${filePath}`);
+          }
+          const markdown = await response.text();
+          const paragraphs = markdownToParagraphs(markdown);
+          container.innerHTML = paragraphs
+            .map((paragraph) => `<p>${paragraph}</p>`)
+            .join("");
+        } catch (error) {
+          container.innerHTML = `<p>${fallbackMessage}</p>`;
+        }
+      }
+
+      function renderResearch() {
+        const grid = document.getElementById("research-grid");
+        grid.innerHTML = researchPapers
+          .map(
+            (paper) => `
+            <article class="paper-card">
+              <img src="${paper.image}" alt="Illustration for ${paper.title}" />
+              <div class="paper-content">
+                <h3>
+                  <a href="${paper.paperUrl}" target="_blank" rel="noopener noreferrer">
+                    ${paper.title}
+                  </a>
+                </h3>
+                <p class="venue">${paper.venue} (${paper.year})</p>
+                <p>${paper.description}</p>
+              </div>
+            </article>
+          `
+          )
+          .join("");
+      }
+
+      renderMarkdownSection(
+        "about.md",
+        "about-content",
+        "About content is currently unavailable."
+      );
+      renderMarkdownSection(
+        "policy.md",
+        "policy-content",
+        "Policy content is currently unavailable."
+      );
+      renderMarkdownSection(
+        "teaching.md",
+        "teaching-content",
+        "Teaching content is currently unavailable."
+      );
+      renderResearch();
+    </script>
+  </body>
+</html>
