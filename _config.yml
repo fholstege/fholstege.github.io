@@ -147,6 +147,8 @@ include:
 exclude:
   - .DS_Store
   - AGENTS.MD
+  - publications
+  - assets/css/main.scss
   - "*.sublime-project"
   - "*.sublime-workspace"
   - .asset-cache
