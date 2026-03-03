@@ -175,7 +175,7 @@ p {
 }
 
 .paper-card img {
-  width: min(80%, 360px);
+  width: min(90%, 500px);
   border-radius: 4px;
   object-fit: contain;
   background: transparent;
