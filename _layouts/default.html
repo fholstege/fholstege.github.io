@@ -17,7 +17,7 @@
       {% include mathjax.html %}
     {% endif %}
   </head>
-  <body class="page-body">
+  <body class="page-body{% if page.layout == 'post' %} post-page{% endif %}">
     <div class="site-frame">
       <header class="topbar">
         <nav aria-label="Primary">

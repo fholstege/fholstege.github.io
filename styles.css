@@ -207,6 +207,14 @@ p {
   padding: 2rem 0 3rem;
 }
 
+.post-page .site-frame {
+  width: min(940px, 100% - 1.5rem);
+}
+
+.post-page .writing-post {
+  --post-copy-width: 52rem;
+}
+
 .site-header {
   display: flex;
   justify-content: space-between;
@@ -295,6 +303,10 @@ p {
   margin-bottom: 2rem;
 }
 
+.post-page .writing-post-header {
+  max-width: var(--post-copy-width);
+}
+
 .prose p,
 .prose ul,
 .prose ol,
@@ -302,6 +314,17 @@ p {
 .post-figure,
 .image-grid {
   max-width: 42rem;
+}
+
+.post-page .prose p,
+.post-page .prose ul,
+.post-page .prose ol,
+.post-page .prose blockquote {
+  max-width: var(--post-copy-width);
+}
+
+.post-page .prose mjx-container[display="true"] {
+  max-width: var(--post-copy-width);
 }
 
 .prose ul,
@@ -345,11 +368,18 @@ p {
 
 .image-grid-three {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: 1rem;
 }
 
 .image-grid .post-figure {
   margin: 0;
   max-width: none;
+}
+
+.image-grid-three .post-figure img {
+  max-height: 210px;
+  object-fit: contain;
 }
 
 mjx-container[display="true"] {
@@ -392,5 +422,9 @@ mjx-container {
   .image-grid-two,
   .image-grid-three {
     grid-template-columns: 1fr;
+  }
+
+  .image-grid-three .post-figure img {
+    max-height: none;
   }
 }
