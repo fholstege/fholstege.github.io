@@ -7,7 +7,7 @@ use_math: true
 
 In our paper [Preserving Task-Relevant Information Under Linear Concept Removal](https://arxiv.org/abs/2506.10703), we use an **oblique projection** to remove an unwanted direction from deep neural network (DNN) representations, while preserving task-relevant information. In this note, I want to clarify the difference between the oblique projection and the (more well-known) orthogonal projection. 
 
-Before diving into the math, let's start with the core intuition: <u>a projection keeps one component of a vector and discards another</u>. The discarded part is the *kernel*. The retained part is the *range*. Orthogonal and oblique projections differ only in the range.
+Before diving into the math, let's start with the core intuition: <u>a projection keeps one component of a vector and discards another</u>. The discarded part is the *kernel*. For orthogonal and oblique projections, the kernel is the same. However, they differ in their *range*, e.g. the subspace upon which the complement of the kernel is projected.
 
 Formally, let $\proj : \RR^d \to \RR^d$ be a linear map. We call $\proj$ a projection if
 
@@ -50,33 +50,38 @@ $$
 $$
 
 
-The orthogonal projection is a special case, where the basis vectors spanning the range are orthogonal to $\kernel(\proj)$, e.g.
+The orthogonal projection is a special case, where the range is the subspace orthogonal to $\kernel(\proj)$, e.g.
 
 $$
 \range(\proj) = \kernel(\proj)^\perp,
 $$
 
-and $\proj$ is an orthogonal projection. That is the whole distinction.
-* A projection is defined by its kernel and the basis vectors for its range.
-* If those basis vectors are orthogonal to the kernel, the projection is orthogonal.
-* If they are not, the projection is oblique.
+In short:
+* A projection is defined by its kernel and its range; a basis only describes that range.
+* If the range is the orthogonal complement of the kernel, the projection is orthogonal.
+* If the range is a different complement of the same kernel, the projection is oblique.
 
-The next two figures show the same idea geometrically. In both cases, the vector $\vx$ is moved parallel to the same kernel direction. What changes is the basis used to characterize the range. In the orthogonal case, that basis is orthogonal to the kernel. In the oblique case, it is a different complement of the same kernel.
+The next three figures illustrate this. The first figure shows the origina data. The next two show the corresponding orthogonal and oblique projections. For both projections, the vector $\vx$ is moved parallel to the same kernel direction. What changes is the range subspace itself. In the orthogonal case, the range is $\kernel(\proj)^\perp$. In the oblique case, the range is a different subspace.
 
+<div class="image-grid image-grid-three">
+  <figure class="post-figure">
+    <img src="{{ '/images/writing/data.png' | relative_url }}" alt="Two-dimensional Gaussian clouds, one axis-aligned and one rotated along a mixed direction." />
+    <figcaption>
+      <b>Original data</b>: Each point is a vector $\vx \in \RR^2$, and the arrows illustrate the kernel, its orthogonal complement, and a different subspace $\boldsymbol{w}$.
+    </figcaption>
+  </figure>
 
-
-<div class="image-grid image-grid-two">
   <figure class="post-figure">
     <img src="{{ '/images/writing/orthogonal-projection.png' | relative_url }}" alt="Orthogonal projection of a vector onto a range orthogonal to the kernel." />
     <figcaption>
-      Orthogonal projection: the range is $\kernel(\proj)^\perp$, so $\vx$ lands on the perpendicular complement of the kernel.
+      <b>Orthogonal projection</b>: the range is $\kernel(\proj)^\perp$, so $\vx$ lands on the perpendicular complement of the kernel.
     </figcaption>
   </figure>
 
   <figure class="post-figure">
     <img src="{{ '/images/writing/oblique-projection.png' | relative_url }}" alt="Oblique projection of a vector onto a slanted complement of the kernel." />
     <figcaption>
-      Oblique projection: $\vx$ is still projected parallel to the same kernel direction, but onto a different basis for the range.
+      <b>Oblique projection</b>: $\vx$ is still projected parallel to the same kernel direction, but onto $\boldsymbol{w}$.
     </figcaption>
   </figure>
 </div>
