@@ -147,6 +147,7 @@ include:
 exclude:
   - .DS_Store
   - AGENTS.MD
+  - local
   - publications
   - assets/css/main.scss
   - "*.sublime-project"
@@ -204,6 +205,9 @@ collections:
   teaching:
     output: true
     permalink: /:collection/:path/
+  writing:
+    output: true
+    permalink: /:collection/:path/
   publications:
     output: true
     permalink: /:collection/:path/
@@ -218,6 +222,12 @@ collections:
 # Defaults
 defaults:
   # _posts
+  - scope:
+      path: ""
+      type: writing
+    values:
+      layout: post
+      use_math: true
   - scope:
       path: ""
       type: posts

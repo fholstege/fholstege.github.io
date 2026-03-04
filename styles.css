@@ -3,7 +3,9 @@
   --surface: #f8f8f5;
   --text: #222222;
   --muted: #5d5d5d;
-  --accent: #3d5a80;
+  --accent: #1b00ce;
+  --accent-hover: #1b00ce;
+  --focus-ring: #8ca4bf;
   --border: #dddddd;
 }
 
@@ -34,11 +36,11 @@ a {
 }
 
 a:hover {
-  color: #2b4b6f;
+  color: var(--accent-hover);
 }
 
 a:focus-visible {
-  outline: 2px solid #8ca4bf;
+  outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -113,7 +115,7 @@ a:focus-visible {
 }
 
 .content-shell {
-  overflow: hidden;
+  min-width: 0;
 }
 
 .topbar {
@@ -195,6 +197,169 @@ p {
   font-size: 0.95rem;
 }
 
+.page-body {
+  min-height: 100vh;
+}
+
+.site-frame {
+  width: min(760px, 100% - 2rem);
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.site-title {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.15rem;
+}
+
+.site-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.site-nav a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.writing-page {
+  padding-top: 2rem;
+}
+
+.writing-index h1,
+.writing-post h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1.1;
+}
+
+.writing-intro {
+  max-width: 38rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.post-list {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.post-card {
+  padding: 1.25rem 0 0;
+  border-top: 1px solid var(--border);
+}
+
+.post-card h2 {
+  margin-bottom: 0.4rem;
+  font-size: 1.45rem;
+}
+
+.post-card h2 a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.post-meta {
+  margin: 0 0 0.45rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 0.25rem;
+}
+
+.writing-post-header {
+  margin-bottom: 2rem;
+}
+
+.prose p,
+.prose ul,
+.prose ol,
+.prose blockquote,
+.post-figure,
+.image-grid {
+  max-width: 42rem;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.25rem;
+  margin: 0 0 1rem;
+}
+
+.prose li + li {
+  margin-top: 0.35rem;
+}
+
+.post-figure {
+  margin: 1.75rem 0 2rem;
+}
+
+.post-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+}
+
+.post-figure figcaption {
+  margin-top: 0.65rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.image-grid {
+  display: grid;
+  gap: 1.25rem;
+  margin: 1.75rem 0 2rem;
+}
+
+.image-grid-two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.image-grid .post-figure {
+  margin: 0;
+  max-width: none;
+}
+
+mjx-container[display="true"] {
+  display: block;
+  margin: 1.25rem 0 !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 0.1rem;
+}
+
+mjx-container {
+  max-width: 100%;
+}
+
 @media (max-width: 900px) {
   .page-shell {
     grid-template-columns: 1fr;
@@ -213,5 +378,14 @@ p {
 
   .topbar {
     position: static;
+  }
+
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .image-grid-two {
+    grid-template-columns: 1fr;
   }
 }
