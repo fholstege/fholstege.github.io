@@ -116,7 +116,7 @@ R(\mathbf{x}_0)
 }.
 $$
 
-So this is not the error for a fixed pair $$ (\mathbf{x}_0,y) $$; only inputs $$\mathbf{x}_0 $$ is fixed. This is the bias-variance trade-off as presented in Chapter 2 of _An Introduction to Statistical Learning_ [\[2\]](#ref-2).
+So this is not the error for a fixed pair $$(\mathbf{x}_0,y)$$; only inputs $$\mathbf{x}_0$$ is fixed. This is the bias-variance trade-off as presented in Chapter 2 of _An Introduction to Statistical Learning_ [\[2\]](#ref-2).
 
 ## Case C: fixed out-of-sample inputs and fixed inputs in the dataset
 
