@@ -226,7 +226,7 @@ All three cases above describe a similar phenomenon: out-of-sample squared error
 
 ## References
 
-<a id="ref-1"></a>[1] Pfau, David., *A Generalized Bias-Variance Decomposition for
+<a id="ref-1"></a>[1] A cool fact is that all Bregman Divergences allow for a Bias-Variance Decomposition. See: Pfau, David., *A Generalized Bias-Variance Decomposition for
 Bregman Divergences*: [arXiv:2511.08789](https://arxiv.org/pdf/2511.08789)
 
 <a id="ref-2"></a>[2] Hastie et al., *An Introduction to Statistical Learning* (official site): [statlearning.com](https://www.statlearning.com/) (see Chapter 2)
