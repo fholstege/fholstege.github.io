@@ -57,9 +57,7 @@ R
 \end{aligned}
 $$
 
-where the second line uses $y=f(\mathbf{x})+\epsilon$.
-
-Define the expected prediction at each $\mathbf{x}$:
+where the second line uses $y=f(\mathbf{x})+\epsilon$. Define the expected prediction at each $\mathbf{x}$:
 
 $$
 \mu(\mathbf{x})=\mathbb{E}_{\mathcal{D}}\!\left[\hat f(\mathbf{x},\mathcal{D})\right].
