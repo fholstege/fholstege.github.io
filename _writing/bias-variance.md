@@ -183,9 +183,11 @@ R(\mathbf{x}_0,  \mathbf{X}_0)
 $$
 
 To shed a bit more light on this case, let us consider the case where the data-generating process is linear and we use ordinary least squares (OLS).
+
 $$
 y=\mathbf{x}^\top\beta+\epsilon_{\mathrm{oos}},\qquad \mathbb{E}[\epsilon_{\mathrm{oos}}\mid \mathbf{x}]=0,\qquad \Var(\epsilon_{\mathrm{oos}}\mid \mathbf{x})=\sigma^2,
 $$
+
 $$
 \mathbf{y}=\mathbf{X}_0\beta+\boldsymbol{\epsilon}_{\mathrm{tr}},\qquad
 \hat\beta=(\mathbf{X}_0^\top\mathbf{X}_0)^{-1}\mathbf{X}_0^\top\mathbf{y},\qquad
