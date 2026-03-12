@@ -1,6 +1,6 @@
 ---
 title: Which Bias-Variance Decomposition?
-date: 2026-03-04
+date: 2026-03-12
 excerpt: In which I aim to clarify the differences between ML's most famous composition.
 use_math: true
 ---
