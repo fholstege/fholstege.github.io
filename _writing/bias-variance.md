@@ -141,8 +141,8 @@ where $\mathbf{X}_0$ is fixed and only $\mathbf{y}$ is random. Define
 
 $$
 R(\mathbf{x}_0,  \mathbf{X}_0)
-= \mathbb{E}_{\mathbf{y},y_0\mid \mathbf{X}_0,\mathbf{x}_0}
-\!\left[(y_0-\hat f(\mathbf{x}_0;\mathbf{X}_0,\mathbf{y}))^2\right].
+= \mathbb{E}_{\mathbf{y},y\mid \mathbf{X}_0,\mathbf{x}_0}
+\!\left[(y-\hat f(\mathbf{x}_0;\mathbf{X}_0,\mathbf{y}))^2\right].
 $$
 
 Because $\mathbf{X}_0$ and $\mathbf{x}_0$ are fixed, we can write
@@ -150,7 +150,7 @@ Because $\mathbf{X}_0$ and $\mathbf{x}_0$ are fixed, we can write
 $$
 \mathbf{y}=\mathbf{X}_0\beta+\boldsymbol{\epsilon}_{\mathrm{tr}},
 \qquad
-y_0=\mathbf{x}_0^\top\beta+\epsilon_{\mathrm{oos}}.
+y=\mathbf{x}_0^\top\beta+\epsilon_{\mathrm{oos}}.
 $$
 
 So the same risk can be written as
@@ -161,14 +161,14 @@ R(\mathbf{x}_0,  \mathbf{X}_0)
 \!\left[\left(\mathbf{x}_0^\top\beta+\epsilon_{\mathrm{oos}}-\hat f(\mathbf{x}_0;\mathbf{X}_0,\mathbf{X}_0\beta+\boldsymbol{\epsilon}_{\mathrm{tr}})\right)^2\right].
 $$
 
-So in this section, expectations are written over $\mathbf{y}$ and $y_0$, but all randomness comes from $$\boldsymbol{\epsilon}_{\mathrm{tr}}$$ and $$\epsilon_{\mathrm{oos}}$$. Equivalently,
+So in this section, expectations are written over $\mathbf{y}$ and $y$, but all randomness comes from $$\boldsymbol{\epsilon}_{\mathrm{tr}}$$ and $$\epsilon_{\mathrm{oos}}$$. Equivalently,
 
 $$
 \Var_{\mathbf{y}\mid \mathbf{X}_0}\!\left(\hat f(\mathbf{x}_0;\mathbf{X}_0,\mathbf{y})\right)
 = \Var_{\boldsymbol{\epsilon}_{\mathrm{tr}}\mid \mathbf{X}_0}\!\left(\hat f(\mathbf{x}_0;\mathbf{X}_0,\mathbf{X}_0\beta+\boldsymbol{\epsilon}_{\mathrm{tr}})\right),
 $$
 $$
-\Var(y_0\mid \mathbf{x}_0)=\Var(\epsilon_{\mathrm{oos}}\mid \mathbf{x}_0).
+\Var(y\mid \mathbf{x}_0)=\Var(\epsilon_{\mathrm{oos}}\mid \mathbf{x}_0).
 $$
 
 The bias-variance decomposition conditional on fixed $\mathbf{X}_0, \mathbf{x}_0$ is
