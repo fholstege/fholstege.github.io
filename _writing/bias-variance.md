@@ -213,7 +213,7 @@ R(\mathbf{x}_0,  \mathbf{X}_0)
 }
 $$
 
-If the fitted estimator is not OLS (for example ridge regression or lasso), the bias term generally does not vanish.
+If we do not use OLS (for example ridge regression or LASSO), the bias term generally does not vanish.
 
 ## Why do these differences matter? 
 
