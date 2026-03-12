@@ -94,7 +94,7 @@ R
 }.
 $$
 
-In this bias-variance decomposition, the stochastic objects are the out-of-sample inputs $\mathbf{x}$ and the training dataset $\mathcal{D}$ (inside the bias and variance term); $f(\mathbf{x})$ and $\sigma^2(\mathbf{x})$ are deterministic functions once $\mathbf{x}$ is fixed.
+In this bias-variance decomposition, the stochastic objects are the out-of-sample inputs $\mathbf{x}$, the out-of-sample noise $\epsilon$ (inside $\sigma^2(\mathbf{x})$ ) and the training dataset $\mathcal{D}$ (inside the bias and variance term); $f(\mathbf{x})$ is deterministic once $\mathbf{x}$ is fixed.
 
 ## Case B: fixed out-of-sample inputs and stochastic dataset
 
