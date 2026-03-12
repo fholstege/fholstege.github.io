@@ -18,7 +18,7 @@ I will first present the bias-variance decomposition in its 'most stochastic' fo
 
 ## 0. Notation and data-generating process
 
-For simplicity, I will focus on the bias-variance decomposition for the squared error. Let $(\mathbf{x},y) \sim \mathbb{P}$ be a random input-label pair on $\RR^p \times \RR$.In the disease example, $\mathbf{x}$ can be a patient's clinical features, and $y$ can be an indicator for whether that patient truly has the disease.  We observe a dataset
+For simplicity, I will focus on the bias-variance decomposition for the squared error. Let $(\mathbf{x},y) \sim \mathbb{P}$ be a random input-label pair on $\RR^p \times \RR$. In the disease example, $\mathbf{x}$ can be a patient's clinical features, and $y$ can be an indicator for whether that patient truly has the disease. We observe a dataset
 
 $$
 \mathcal{D}=\{(\mathbf{x}_i,y_i)\}_{i=1}^n,
@@ -51,11 +51,13 @@ $$
 \begin{aligned}
 R
 &=\mathbb{E}_{\mathcal{D},\mathbf{x}}\!\left[\mathbb{E}_{y \mid \mathbf{x}}\!\left[(y -\hat f(\mathbf{x},\mathcal{D}))^2\right]\right]\\
-&= \mathbb{E}_{\mathcal{D},\mathbf{x}}\!\left[\mathbb{E}_{\epsilon\mid \mathbf{x}}\!\left[(f(\mathbf{x})+\epsilon-\hat f(\mathbf{x},\mathcal{D}))^2\right]\right] \tag{By definition of $y$} \\
+&= \mathbb{E}_{\mathcal{D},\mathbf{x}}\!\left[\mathbb{E}_{\epsilon\mid \mathbf{x}}\!\left[(f(\mathbf{x})+\epsilon-\hat f(\mathbf{x},\mathcal{D}))^2\right]\right] \\
 &= \mathbb{E}_{\mathcal{D},\mathbf{x}}\!\left[(f(\mathbf{x})-\hat f(\mathbf{x},\mathcal{D}))^2\right]
 + \mathbb{E}_{\mathbf{x}}\!\left[\sigma^2(\mathbf{x})\right].
 \end{aligned}
 $$
+
+where the second line uses $y=f(\mathbf{x})+\epsilon$.
 
 Define the expected prediction at each $\mathbf{x}$:
 
