@@ -56,11 +56,6 @@ $$
 \range(\proj) = \kernel(\proj)^\perp,
 $$
 
-In short:
-* A projection is defined by its kernel and its range; a basis only describes that range.
-* If the range is the orthogonal complement of the kernel, the projection is orthogonal.
-* If the range is a different complement of the same kernel, the projection is oblique.
-
 The next three figures illustrate this. The first figure shows the origina data. The next two show the corresponding orthogonal and oblique projections. For both projections, the vector $\vx$ is moved parallel to the same kernel direction. What changes is the range subspace itself. In the orthogonal case, the range is $\kernel(\proj)^\perp$. In the oblique case, the range is a different subspace.
 
 <div class="image-grid image-grid-three">
@@ -85,3 +80,8 @@ The next three figures illustrate this. The first figure shows the origina data.
     </figcaption>
   </figure>
 </div>
+
+In short:
+* A projection is defined by its kernel and its range; a basis only describes that range.
+* If the range is the orthogonal complement of the kernel, the projection is orthogonal.
+* If the range is a different complement of the same kernel, the projection is oblique.
