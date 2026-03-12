@@ -161,7 +161,7 @@ R(\mathbf{x}_0,  \mathbf{X}_0)
 \!\left[\left(\mathbf{x}_0^\top\beta+\epsilon_{\mathrm{oos}}-\hat f(\mathbf{x}_0;\mathbf{X}_0,\mathbf{X}_0\beta+\boldsymbol{\epsilon}_{\mathrm{tr}})\right)^2\right].
 $$
 
-So in this section, expectations are written over $\mathbf{y}$ and $y_0$, but all randomness comes from $$ \boldsymbol{\epsilon}_{\mathrm{tr}}$ and $\epsilon_{\mathrm{oos}} $$. Equivalently,
+So in this section, expectations are written over $\mathbf{y}$ and $y_0$, but all randomness comes from $$ \boldsymbol{\epsilon}_{\mathrm{tr}} $$ and $$ \epsilon_{\mathrm{oos}} $$. Equivalently,
 
 $$
 \Var_{\mathbf{y}\mid \mathbf{X}_0}\!\left(\hat f(\mathbf{x}_0;\mathbf{X}_0,\mathbf{y})\right)
