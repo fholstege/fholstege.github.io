@@ -76,9 +76,11 @@ $$
 Where we use $\mathbb{E}_{\mathcal{D}}[\mu(\mathbf{x})-\hat f(\mathbf{x},\mathcal{D})]=0$.
 Now we take the expectation w.r.t $\mathbf{x}$ on both sides:
 $$
+\begin{aligned}
 \mathbb{E}_{\mathcal{D},\mathbf{x}}\!\left[(f(\mathbf{x})-\hat f(\mathbf{x},\mathcal{D}))^2\right]
 = \mathbb{E}_{\mathbf{x}}\!\left[(f(\mathbf{x})-\mu(\mathbf{x}))^2\right]
 + \mathbb{E}_{\mathbf{x}}\!\left[\Var_{\mathcal{D}}\!\left(\hat f(\mathbf{x},\mathcal{D})\right)\right].
+\end{aligned}
 $$
 
 So the full decomposition is
