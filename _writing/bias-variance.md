@@ -73,7 +73,7 @@ $$
 &= (f(\mathbf{x})-\mu(\mathbf{x}))^2 + \Var_{\mathcal{D}}\!\left(\hat f(\mathbf{x},\mathcal{D})\right)
 \end{aligned}
 $$
-Where in the last step we use $\mathbb{E}_{\mathcal{D}}[\mu(\mathbf{x})-\hat f(\mathbf{x},\mathcal{D})]=0$.
+Where we use $\mathbb{E}_{\mathcal{D}}[\mu(\mathbf{x})-\hat f(\mathbf{x},\mathcal{D})]=0$.
 Now we take the expectation w.r.t $\mathbf{x}$ on both sides:
 $$
 \mathbb{E}_{\mathcal{D},\mathbf{x}}\!\left[(f(\mathbf{x})-\hat f(\mathbf{x},\mathcal{D}))^2\right]
