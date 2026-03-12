@@ -73,7 +73,7 @@ $$
 &= (f(\mathbf{x})-\mu(\mathbf{x}))^2 + \Var_{\mathcal{D}}\!\left(\hat f(\mathbf{x},\mathcal{D})\right)
 \end{aligned}
 $$
-Where in the last step we use $\mathbb{E}_{\mathcal{D}}[\mu(\mathbf{x})-\hat f(\mathbf{x},\mathcal{D})]=0$. Now we take the expectation w.r.t $\mathbf{x}$ on both sides:
+Where in the last step we use $\mathbb{E}_{\mathcal{D}}[\mu(\mathbf{x})-\hat f(\mathbf{x},\mathcal{D})]=0$. Now we take the expectation w.r.t $\mathbf{x}$:
 
 $$
 \begin{aligned}
@@ -116,7 +116,7 @@ R(\mathbf{x}_0)
 }.
 $$
 
-So this is not the error for a fixed pair $(\mathbf{x}_0,y)$; only inputs $\mathbf{x}_0$ is fixed. This is the bias-variance trade-off as presented in Chapter 2 of _An Introduction to Statistical Learning_ [\[2\]](#ref-2).
+So this is not the error for a fixed pair $$ (\mathbf{x}_0,y)$; only inputs $\mathbf{x}_0 $$ is fixed. This is the bias-variance trade-off as presented in Chapter 2 of _An Introduction to Statistical Learning_ [\[2\]](#ref-2).
 
 ## Case C: fixed out-of-sample inputs and fixed inputs in the dataset
 
@@ -161,7 +161,7 @@ R(\mathbf{x}_0,  \mathbf{X}_0)
 \!\left[\left(\mathbf{x}_0^\top\beta+\epsilon_{\mathrm{oos}}-\hat f(\mathbf{x}_0;\mathbf{X}_0,\mathbf{X}_0\beta+\boldsymbol{\epsilon}_{\mathrm{tr}})\right)^2\right].
 $$
 
-So in this section, expectations are written over $\mathbf{y}$ and $y_0$, but all randomness comes from $\boldsymbol{\epsilon}_{\mathrm{tr}}$ and $\epsilon_{\mathrm{oos}}$. Equivalently,
+So in this section, expectations are written over $\mathbf{y}$ and $y_0$, but all randomness comes from $$ \boldsymbol{\epsilon}_{\mathrm{tr}}$ and $\epsilon_{\mathrm{oos}} $$. Equivalently,
 
 $$
 \Var_{\mathbf{y}\mid \mathbf{X}_0}\!\left(\hat f(\mathbf{x}_0;\mathbf{X}_0,\mathbf{y})\right)
