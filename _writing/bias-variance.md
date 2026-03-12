@@ -6,7 +6,7 @@ use_math: true
 ---
 
 
-Every university student that has taken a class will have likely encountered the *bias-variance decomposition* at some point. The core idea is that for some loss functions [\[1\]](#ref-1), we can split up the expected out-of-sample loss (e.g. the loss on samples not in our training data) into three parts. For example, suppose we predict whether a patient has a disease from clinical features (symptoms, lab values, age, etc.): the model outputs a risk score, and we compare it to the true diagnosis.
+Every university student that has taken a class in Machine Learning (ML) will have likely encountered the *bias-variance decomposition* at some point. The core idea is that for some loss functions [\[1\]](#ref-1), we can split up the expected out-of-sample loss (e.g. the loss on samples not in our training data) into three parts. For example, suppose we predict whether a patient has a disease from clinical features (symptoms, lab values, age, etc.): the model outputs a risk score, and we compare it to the true diagnosis.
 * The **bias**: in the disease example, this is the squared gap between the true disease signal and the model's average predicted risk for similar patients.
 * The **variance**: in the disease example, this is how much the predicted risk changes for the same patient when we retrain on a different sample of patients.
 * The **Irreducible noise**: in the disease example, this is randomness/unobserved factors in diagnosis outcomes that are not predictable from the available features.
