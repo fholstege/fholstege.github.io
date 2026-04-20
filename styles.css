@@ -323,6 +323,10 @@ p {
   max-width: var(--post-copy-width);
 }
 
+.post-page .prose p {
+  margin: 0 0 1.15rem;
+}
+
 .post-page .prose mjx-container[display="true"] {
   max-width: var(--post-copy-width);
 }
@@ -335,6 +339,13 @@ p {
 
 .prose li + li {
   margin-top: 0.35rem;
+}
+
+.post-page .prose ol + p,
+.post-page .prose p + ol,
+.post-page .prose p + ul,
+.post-page .prose ul + p {
+  margin-top: 1rem;
 }
 
 .post-figure {
@@ -380,6 +391,23 @@ p {
 .image-grid-three .post-figure img {
   max-height: 210px;
   object-fit: contain;
+}
+
+.reference-list {
+  max-width: var(--post-copy-width);
+  padding-left: 1.4rem;
+}
+
+.reference-list li {
+  overflow-wrap: anywhere;
+}
+
+.reference-list li + li {
+  margin-top: 0.55rem;
+}
+
+.reference-list a {
+  text-decoration-thickness: 1px;
 }
 
 mjx-container[display="true"] {
