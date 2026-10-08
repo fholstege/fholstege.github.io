@@ -6,6 +6,6 @@ excerpt: 'Modern neural networks often encode unwanted concepts alongside task-r
 date: 2025-06-12
 venue: 'NeurIPS'
 paperurl: 'https://arxiv.org/abs/2506.10703'
-brief_description: '**Summary**: We introduce an oblique projection (SPLICE) that ensures linear guardedness w.r.t a concept of interest, while (linear) information regarding a task of interest. '
+brief_description: '**Summary**: We introduce an oblique projection (SPLINCE) that ensures linear guardedness w.r.t a concept of interest, while (linear) information regarding a task of interest. '
 brief_description_image: "SPLICE_illustrated.png"
 ---
