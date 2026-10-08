@@ -1,4 +1,6 @@
-Hi there! my name is Floris.  Currently, I am a researcher at Algorithm Audit ([link](https://algorithmaudit.eu/)), helping public organisations with the ethical use of algorithms. I have previously collaborated with them on a project to audit the Dutch Education Executive Agency (DUO): you can read about that [here](https://algorithmaudit.eu/algoprudence/cases/aa202402_preventing-prejudice_addendum/).
+Hi there! my name is Floris.  
+
+Currently, I am a researcher at Algorithm Audit ([link](https://algorithmaudit.eu/)), helping public organisations with the ethical use of algorithms. I have previously collaborated with them on a project to audit the Dutch Education Executive Agency (DUO): you can read about that [here](https://algorithmaudit.eu/algoprudence/cases/aa202402_preventing-prejudice_addendum/).
 
 
 I have just finished my PhD in Machine Learning at the University of Amsterdam, where I developed methods to prevent deep neural networks from relying on spurious correlations. My work has been published in top machine learning conferences (NeurIPS, ICML, ICLR), and you can read some of it below.

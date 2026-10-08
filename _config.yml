@@ -142,9 +142,9 @@ include:
   - _pages
   - files
   - about.md
-  - policy.md
   - teaching.md
 exclude:
+  - policy.md
   - .DS_Store
   - AGENTS.MD
   - local
