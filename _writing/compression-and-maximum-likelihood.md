@@ -5,29 +5,27 @@ excerpt: How minimizing the number of bits needed to represent data leads to max
 use_math: true
 ---
 
-For some time I have heard ‘compression is intelligence’ as a sort of throwaway comment. I never really understood what this meant, even after watching a [great 3Blue1Brown video](https://members.3blue1brown.com/posts/reinventing-part-160410360). After reading an [amazing essay by Ryan Greene](https://www.greene.sh/compression-and-intelligence/) I finally had enough, and decided that I needed to understand this statement a bit more. Below is my best attempt, by connecting compression to something I understand much better (maximum likelihood).
+For some time I have heard ‘compression is intelligence’ as a sort of throwaway comment. I never really understood what this meant, even after watching a [great 3Blue1Brown video](https://members.3blue1brown.com/posts/reinventing-part-160410360). After trying to read an [amazing essay by Ryan Greene](https://www.greene.sh/compression-and-intelligence/) I finally had enough, and decided that I needed to understand this statement a bit more. Below is my best attempt at doing so, by connecting compression to something I understand much better (maximum likelihood).
 
 ## 1. Maximum likelihood
 
-Let $x$ be a random variable with $k$ possible outcomes $x_1,\ldots,x_k$. We write $p(x\mid\theta)$ for the probability the model assigns to an outcome. In particular, $p(x_j\mid\theta)$ is the probability that $x=x_j$ under a model with parameters $\theta$. For example, if $x$ is the outcome of a coin toss, $\theta$ could be the probability of heads.
-
-Suppose we observe $n$ independent draws of $x$. Let $x^{(i)}$ denote the value of draw $i$. Each draw takes one of the possible values $x_1,\ldots,x_k$. The likelihood $L(\theta)$ is the probability the model assigns to the observed sequence. By independence,
+Let $x$ be a random variable with $k$ possible outcomes $x_1,\ldots,x_k$. We write $p(x_j\mid\theta)$ for the probability the model assigns that $x=x_j$ under a model with parameters $\theta$. 
+Suppose we observe $n$ independent draws of $x$. Let $x^{(i)}$ denote the value of draw $i$. Each draw takes one of the possible values $x_1,\ldots,x_k$. The likelihood $L(\theta)$ is the probability the model assigns to the data. By independence,
 
 $$
 L(\theta)=\prod_{i=1}^n p(x^{(i)}\mid\theta).
 $$
 
-Maximum likelihood chooses the parameters $\theta$ that maximize $L(\theta)$. Since the logarithm is increasing, this is equivalent to minimizing the negative log-likelihood.
-
+Maximum likelihood chooses the $\theta$ that maximize $L(\theta)$ - in words, the parameters that are most likely given the data. Since the logarithm is increasing, this is equivalent to minimizing the negative log-likelihood.
 $$
--\log_2 L(\theta)=\sum_{i=1}^n -\log_2 p(x^{(i)}\mid\theta).
+-\log_2 L(\theta)=-\sum_{i=1}^n \log_2 p(x^{(i)}\mid\theta).
 $$
-
 Taking the log turns the product into a sum, which is easier to optimize in practice.
 
 ## 2. Compression
 
-Suppose we use a string of bits to represent each outcome of $x$. Let $b(x_j)$ be the number of bits we use to represent outcome $x_j$, and write $b_j=b(x_j)$. If $p_j=\Pr(x=x_j)$, the expected number of bits per outcome is
+Now we turn to compression, but what do we actually mean with that? We want to use a string of bits to represent each outcome of $x$.
+Let $b(x_j)$ be the number of bits we use to represent outcome $x_j$, and write $b_j=b(x_j)$, as well as $p_j=\Pr(x=x_j)$. The expected number of bits per outcome is
 
 $$
 \mathbb{E}[b(x)] = \sum_{j=1}^k p_j b_j.
@@ -42,7 +40,6 @@ Suppose we write the bits for the outcomes $x_1, \dots, x_k$. As we read the str
 To avoid this ambiguity, we choose the bit strings so that we can recognize each outcome as soon as we read its bits. In the example, if we use `0` for $x_1$, we rule out `01` and every other longer string starting with `0` for the remaining outcomes. With this rule, each string of length $B$ can begin with the bits for at most one outcome.
 
 Now if we follow this scheme, outcome $x_j$ takes up $2^{B-b_j}$ of these strings. 
-
 For the same four outcomes, keep `0` for $x_1$ and use `10`, `110`, and `111` for the others. The longest code uses three bits, so $B=3$. Every three-bit string that starts with `0` is reserved for $x_1$. The other outcomes reserve the strings that start with their own codes.
 
 | Outcome | Code | Three-bit strings reserved | Number reserved |
@@ -73,7 +70,7 @@ $$
 \sum_{j=1}^k 2^{-b_j} \le 1.
 $$
 
-This is the so-called *Kraft inequality*.
+This is the so-called *Kraft inequality* - [see this link](https://en.wikipedia.org/wiki/Kraft%E2%80%93McMillan_inequality) for more info on it. 
 
 ## 3. From bit lengths to maximum likelihood
 
@@ -124,15 +121,15 @@ $$
 Thus $\lambda\ln 2=1$ and $q_j=p_j$ for every outcome. Substituting this back into the constrained optimization problem, the solution for each outcome is given by:
 
 $$
-b_j^{\star}=-\log_2 q_j=-\log_2 p_j=-\log_2\Pr(x=x_j).
+b_j^{\star}=-\log_2 q_j=-\log_2 p_j
 $$
 Notice that if we substitute this back into the expectation, we get
 
 $$
-\mathbb{E}[b(x)] = \sum_{j=1}^k p_j b_j^{\star} = -\sum_{j=1}^k p_j\log_2\Pr(x=x_j)
+\mathbb{E}[b(x)] = \sum_{j=1}^k p_j b_j^{\star} = -\sum_{j=1}^k p_j\log_2p_j
 $$
 
-Now in some cases, we might know $\Pr(x=x_j)$ (for instance when rolling a dice), but often we do not. Instead, we use a model with parameters $\theta$ to estimate it. The model gives draw $i$ an ideal length of $-\log_2 p(x^{(i)}\mid\theta)$. Adding these lengths gives the ideal length for the observed sequence.
+Now in some cases, we might know $p_j$ (for instance when rolling a dice), but often we do not. Instead, we use a model with parameters $\theta$ to estimate it. The model gives draw $i$ an ideal length of $-\log_2 p(x^{(i)}\mid\theta)$. Adding these lengths gives the ideal length for the observed sequence.
 
 $$
 \sum_{i=1}^n -\log_2 p(x^{(i)}\mid\theta)

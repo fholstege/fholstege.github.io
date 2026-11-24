@@ -12,3 +12,6 @@ Gemfile.lock
 node_modules
 package-lock.json
 AGENTS.MD
+
+# macOS Finder metadata
+.DS_Store
