@@ -113,7 +113,7 @@ $$
 =\frac{1}{\lambda\ln 2}.
 $$
 
-Thus $\lambda\ln 2=1$, so $q_j=p_j$ for every outcome. Using $b_j=-\log_2 q_j$, we get the ideal length of the string of bits for each outcome.
+Thus $\lambda\ln 2=1$, so $q_j=p_j$ for every outcome. The objective $F$ is strictly convex in the shares, so this is the unique minimum. Using $b_j=-\log_2 q_j$, we get the ideal length of the string of bits for each outcome.
 
 $$
 b_j^{\star}=-\log_2 q_j=-\log_2 p_j
@@ -125,7 +125,7 @@ $$
 \mathbb{E}[b(x)] = \sum_{j=1}^k p_j b_j^{\star} = -\sum_{j=1}^k p_j\log_2p_j
 $$
 
-If we don’t know the true probabilities $p_j$, we can use a model’s probabilities to set the code lengths. Substituting $p(x_j\mid\theta)$ for $p_j$ in the formula for the ideal length gives $b_\theta(x_j)=-\log_2 p(x_j\mid\theta)$. The true probabilities still tell us how often we expect to use each code, so the expected length per draw is
+If we don’t know the true probabilities $p_j$, we can use a model’s probabilities to set the code lengths. Assume the model assigns positive probability to every outcome so that each ideal length is finite. Substituting $p(x_j\mid\theta)$ for $p_j$ in the formula for the ideal length gives $b_\theta(x_j)=-\log_2 p(x_j\mid\theta)$. The true probabilities still tell us how often we expect to use each code, so the expected length per draw is
 
 $$
 \mathbb{E}[b_\theta(x)] = -\sum_{j=1}^k p_j\log_2 p(x_j\mid\theta).
@@ -139,9 +139,7 @@ $$
 = -\frac{1}{n}\log_2 L(\theta).
 $$
 
-In the last step, we use the fact that the sum of the logs of the observed draws’ probabilities equals the log of their product. This last step shows the expected bits needed at the minimum,  is the (average) negative log likelihood.
-Maximum likelihood therefore chooses the parameters that in turn give the shortest description. 
-
+In the last step, we use that the sum of the log probabilities equals the log of their product, which is the likelihood. So maximizing likelihood minimizes the average ideal code length on the data we observed. For a fixed model, the expectation of this sample average is the expected ideal code length per draw.
 
 ## 4. The intuition behind the math
 
