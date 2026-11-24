@@ -165,6 +165,5 @@ $$
 
 Every time $x_1$ appears, we spend two extra bits. We save those two bits whenever $x_4$ appears, but that happens far less often.
 
-A probability model helps us decide which outcomes should get the shorter codes. If we know the true probabilities, we can use them to calculate the ideal lengths. If we have several models, maximum likelihood picks the one whose ideal lengths add up to the fewest bits on the data we observed.
-
+A probability model helps us decide which outcomes should get the shorter codes. If we know the true probabilities, we can use them to calculate the ideal lengths. 
 I’m still unconvinced by “compression is intelligence.” What I take from this is that the better you know what’s likely to happen, the fewer bits you need on average to describe what happens.
