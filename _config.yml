@@ -10,10 +10,9 @@ author:
   name: Floris Holstege
   email: f.g.holstege@uva.nl
 
-# The homepage fetches these files as Markdown.
+# The homepage fetches this file as Markdown.
 include:
   - about.md
-  - teaching.md
 exclude:
   - AGENTS.MD
   - illustrations
