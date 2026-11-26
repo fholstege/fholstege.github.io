@@ -17,6 +17,7 @@ exclude:
   - AGENTS.MD
   - illustrations
   - local
+  - tests
 
 markdown: kramdown
 kramdown:
