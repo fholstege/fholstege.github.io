@@ -63,15 +63,14 @@ $$
 n\geq n^*=\left\lceil\frac{\log\beta}{\log(1-\mu_{\min})}\right\rceil.
 $$
 
-This is an exact guarantee for any sample size. For small $\mu_{\min}$, $n^*\approx-\log(\beta)/\mu_{\min}$. If we choose $\beta=0.05$, this is roughly $3/\mu_{\min}$ samples. Using the exact formula, **299 interactions** give at least a 95% chance of detecting a behaviour whose probability is at least 1%.
+This is an exact guarantee for any sample size. For small $\mu_{\min}$, $n^*\approx-\log(\beta)/\mu_{\min}$. If we choose $\beta=0.05$, this is roughly $3/\mu_{\min}$ samples. Below, you can exactly calculate how much samples are needed.
 
-No finite sample size gives this guarantee for *every* $\mu>0$: the behaviour could be arbitrarily rare. Observing no violations therefore does not establish that $\mu=0$. All these guarantees apply to the chosen evaluation distribution.
 
 ### Try it
 
 <form id="sample-size-calculator" style="border: 1px solid currentColor; border-radius: 8px; padding: 1rem;">
-  <p><label for="beta-probability">Maximum probability of accepting H₀ under H_A, β (%)</label><br><input id="beta-probability" type="number" value="5" min="0" max="100" step="any" required style="font: inherit; max-width: 100%; box-sizing: border-box;"></p>
-  <p><label for="violation-probability">Lowest violation probability to reliably detect, μ_min (%)</label><br><input id="violation-probability" type="number" value="1" min="0" max="100" step="any" required style="font: inherit; max-width: 100%; box-sizing: border-box;"></p>
+  <p><label for="beta-probability">Maximum probability of accepting $H_0$ under $H_A$, $\beta$ (%)</label><br><input id="beta-probability" type="number" value="5" min="0" max="100" step="any" required style="font: inherit; max-width: 100%; box-sizing: border-box;"></p>
+  <p><label for="violation-probability">Lowest violation probability to reliably detect, $\mu_{\min}$ (%)</label><br><input id="violation-probability" type="number" value="1" min="0" max="100" step="any" required style="font: inherit; max-width: 100%; box-sizing: border-box;"></p>
   <p><output id="sample-size-result" aria-live="polite" aria-atomic="true"></output></p>
   <noscript>Enable JavaScript to calculate sample sizes, or use the formula above.</noscript>
 </form>
